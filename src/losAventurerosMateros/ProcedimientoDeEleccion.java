@@ -2,6 +2,7 @@ package losAventurerosMateros;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -21,19 +22,21 @@ public class ProcedimientoDeEleccion {
 	}
 
 	public void eleccion() {
-		int movimientos=0, desde=0;
+		cargarAventureros();
+		int movimientos=0;
 		for (int i = 0; i < numSalida.size(); i++) {
 			movimientos = (movimientos+numSalida.get(i))%aventureros.size();
+			aventurerosQueSalen.add(aventureros.get(movimientos).getNumero());
 			System.out.println(aventureros.get(movimientos));
 			aventureros.remove(movimientos);
-			desde = movimientos;
 		}
 		System.out.println("CEBADOR->"+aventureros.get(0));
+		grabarResultados();
 	}
-	
+		
 	public void cargarAventureros() {
 		try {
-			Scanner sc = new Scanner(new File(path + ".in"));
+			Scanner sc = new Scanner(new File("./lote_de_pruebas/Input/"+path+".in"));
 			Aventurero aventurero;
 			int i;
 			this.cantAventureros = sc.nextInt();
@@ -47,11 +50,23 @@ public class ProcedimientoDeEleccion {
 			sc.close();
 
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
+	
+	public void grabarResultados() {
+		try {
+			PrintWriter pw = new PrintWriter(new File("./lote_de_pruebas/Recibido/"+path+".out"));
+			for(Integer aventurero: aventurerosQueSalen)
+				pw.print(aventurero+" ");
+			pw.println();
+			pw.print(aventureros.get(0).getNumero());
+			pw.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return "ProcedimientoDeEleccion [aventureros=" + aventureros + ", numSalida=" + numSalida + ", cantAventureros="
