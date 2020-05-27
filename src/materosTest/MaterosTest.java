@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Random;
 import java.util.Scanner;
 
 import org.junit.Assert;
@@ -26,7 +28,7 @@ public class MaterosTest {
 		esperado.close();
 		recibido.close();
 	}
-	
+	@Test
 	public void testCasoBase2() throws FileNotFoundException {
 		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("caso2");
 		pe.eleccion();
@@ -39,7 +41,7 @@ public class MaterosTest {
 		esperado.close();
 		recibido.close();
 	}
-	
+	@Test
 	public void testCasoBase3() throws FileNotFoundException {
 		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("caso3");
 		pe.eleccion();
@@ -52,7 +54,7 @@ public class MaterosTest {
 		esperado.close();
 		recibido.close();
 	}
-	
+	@Test
 	public void testCasoBase4() throws FileNotFoundException {
 		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("caso4");
 		pe.eleccion();
@@ -65,7 +67,7 @@ public class MaterosTest {
 		esperado.close();
 		recibido.close();
 	}
-	
+	@Test
 	public void testCasoBase5() throws FileNotFoundException {
 		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("caso5");
 		pe.eleccion();
@@ -77,6 +79,27 @@ public class MaterosTest {
 		Assert.assertEquals(esp, rec);
 		esperado.close();
 		recibido.close();
+	}
+	@Test
+	public void testCasoFatiga() {
+//		generadorFatiga();
+		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("casoFatiga");
+		pe.eleccion();
+	}
+	
+	public void generadorFatiga() {
+		PrintWriter pw;
+		try {
+			pw = new PrintWriter("lote_de_pruebas/Input/casoFatiga.in");
+			Random r = new Random();
+			pw.println(400000);
+			for(int i=1; i<400000; i++) {
+				pw.print(r.nextInt(100000000)+" ");
+			}
+			pw.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProcedimientoDeEleccion {
+	private String path;
 	private List<Aventurero> aventureros;
 	private List<Integer> numSalida;
 	private List<Integer>aventurerosQueSalen;
 	private int cantAventureros;
-	private String path;
 
 	public ProcedimientoDeEleccion(String path) {
 		this.path = path;
@@ -34,7 +34,7 @@ public class ProcedimientoDeEleccion {
 		grabarResultados();
 	}
 		
-	public void cargarAventureros() {
+	private void cargarAventureros() {
 		try {
 			Scanner sc = new Scanner(new File("./lote_de_pruebas/Input/"+path+".in"));
 			Aventurero aventurero;
@@ -54,7 +54,7 @@ public class ProcedimientoDeEleccion {
 		}
 	}
 	
-	public void grabarResultados() {
+	private void grabarResultados() {
 		try {
 			PrintWriter pw = new PrintWriter(new File("./lote_de_pruebas/Recibido/"+path+".out"));
 			for(Integer aventurero: aventurerosQueSalen)
