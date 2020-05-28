@@ -55,13 +55,13 @@ public class MaterosTest {
 		recibido.close();
 	}
 	@Test
-	public void testsaleElUltimo() throws FileNotFoundException {
-		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("saleElUltimo");
+	public void testcebaElUltimo() throws FileNotFoundException {
+		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("cebaElUltimo");
 		pe.eleccion();
-		Scanner esperado = new Scanner(new File("./lote_de_pruebas/Esperado/saleElUltimo.out"));
+		Scanner esperado = new Scanner(new File("./lote_de_pruebas/Esperado/cebaElUltimo.out"));
 		String esp = esperado.useDelimiter("\\A").next();
 
-		Scanner recibido = new Scanner(new File("./lote_de_pruebas/Recibido/saleElUltimo.out"));
+		Scanner recibido = new Scanner(new File("./lote_de_pruebas/Recibido/cebaElUltimo.out"));
 		String rec = recibido.useDelimiter("\\A").next();
 		Assert.assertEquals(esp, rec);
 		esperado.close();
