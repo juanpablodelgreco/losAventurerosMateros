@@ -27,10 +27,8 @@ public class ProcedimientoDeEleccion {
 		for (int i = 0; i < numSalida.size(); i++) {
 			movimientos = (movimientos+numSalida.get(i))%aventureros.size();
 			aventurerosQueSalen.add(aventureros.get(movimientos).getNumero());
-			System.out.println(aventureros.get(movimientos));
 			aventureros.remove(movimientos);
 		}
-		System.out.println("CEBADOR->"+aventureros.get(0));
 		grabarResultados();
 	}
 		

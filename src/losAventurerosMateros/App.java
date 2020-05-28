@@ -9,7 +9,12 @@ public class App extends Aventurero{
 	}
 
 	public static void main(String[] args) {
-		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("caso2");
+		
+		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("casoFatiga9");
+		 long inicio = System.currentTimeMillis();
 		pe.eleccion();
+		 long fin = System.currentTimeMillis();
+		 double tiempo = (double) ((fin - inicio));
+		 System.out.println(tiempo +" segundos");
 	}
 }

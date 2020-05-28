@@ -17,12 +17,12 @@ public class MaterosTest {
 
 	@Test
 	public void testCasoBase1() throws FileNotFoundException {
-		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("caso1");
+		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("casoBase1");
 		pe.eleccion();
-		Scanner esperado = new Scanner(new File("./lote_de_pruebas/Esperado/caso1.out"));
+		Scanner esperado = new Scanner(new File("./lote_de_pruebas/Esperado/casoBase1.out"));
 		String esp = esperado.useDelimiter("\\A").next();
 
-		Scanner recibido = new Scanner(new File("./lote_de_pruebas/Recibido/caso1.out"));
+		Scanner recibido = new Scanner(new File("./lote_de_pruebas/Recibido/casoBase1.out"));
 		String rec = recibido.useDelimiter("\\A").next();
 		Assert.assertEquals(esp, rec);
 		esperado.close();
@@ -30,51 +30,51 @@ public class MaterosTest {
 	}
 	@Test
 	public void testCasoBase2() throws FileNotFoundException {
-		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("caso2");
+		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("casoBase2");
 		pe.eleccion();
-		Scanner esperado = new Scanner(new File("./lote_de_pruebas/Esperado/caso2.out"));
+		Scanner esperado = new Scanner(new File("./lote_de_pruebas/Esperado/casoBase2.out"));
 		String esp = esperado.useDelimiter("\\A").next();
 
-		Scanner recibido = new Scanner(new File("./lote_de_pruebas/Recibido/caso2.out"));
+		Scanner recibido = new Scanner(new File("./lote_de_pruebas/Recibido/casoBase2.out"));
 		String rec = recibido.useDelimiter("\\A").next();
 		Assert.assertEquals(esp, rec);
 		esperado.close();
 		recibido.close();
 	}
 	@Test
-	public void testCasoBase3() throws FileNotFoundException {
-		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("caso3");
+	public void testcasoCatedra() throws FileNotFoundException {
+		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("casoCatedra");
 		pe.eleccion();
-		Scanner esperado = new Scanner(new File("./lote_de_pruebas/Esperado/caso3.out"));
+		Scanner esperado = new Scanner(new File("./lote_de_pruebas/Esperado/casoCatedra.out"));
 		String esp = esperado.useDelimiter("\\A").next();
 
-		Scanner recibido = new Scanner(new File("./lote_de_pruebas/Recibido/caso3.out"));
+		Scanner recibido = new Scanner(new File("./lote_de_pruebas/Recibido/casoCatedra.out"));
 		String rec = recibido.useDelimiter("\\A").next();
 		Assert.assertEquals(esp, rec);
 		esperado.close();
 		recibido.close();
 	}
 	@Test
-	public void testCasoBase4() throws FileNotFoundException {
-		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("caso4");
+	public void testsaleElUltimo() throws FileNotFoundException {
+		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("saleElUltimo");
 		pe.eleccion();
-		Scanner esperado = new Scanner(new File("./lote_de_pruebas/Esperado/caso4.out"));
+		Scanner esperado = new Scanner(new File("./lote_de_pruebas/Esperado/saleElUltimo.out"));
 		String esp = esperado.useDelimiter("\\A").next();
 
-		Scanner recibido = new Scanner(new File("./lote_de_pruebas/Recibido/caso4.out"));
+		Scanner recibido = new Scanner(new File("./lote_de_pruebas/Recibido/saleElUltimo.out"));
 		String rec = recibido.useDelimiter("\\A").next();
 		Assert.assertEquals(esp, rec);
 		esperado.close();
 		recibido.close();
 	}
 	@Test
-	public void testCasoBase5() throws FileNotFoundException {
-		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("caso5");
+	public void testsaleElDeAlLado() throws FileNotFoundException {
+		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("saleElDeAlLado");
 		pe.eleccion();
-		Scanner esperado = new Scanner(new File("./lote_de_pruebas/Esperado/caso5.out"));
+		Scanner esperado = new Scanner(new File("./lote_de_pruebas/Esperado/saleElDeAlLado.out"));
 		String esp = esperado.useDelimiter("\\A").next();
 
-		Scanner recibido = new Scanner(new File("./lote_de_pruebas/Recibido/caso5.out"));
+		Scanner recibido = new Scanner(new File("./lote_de_pruebas/Recibido/saleElDeAlLado.out"));
 		String rec = recibido.useDelimiter("\\A").next();
 		Assert.assertEquals(esp, rec);
 		esperado.close();
@@ -82,7 +82,7 @@ public class MaterosTest {
 	}
 	@Test
 	public void testCasoFatiga() {
-//		generadorFatiga();
+		//generadorFatiga();
 		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("casoFatiga");
 		pe.eleccion();
 	}
@@ -90,10 +90,10 @@ public class MaterosTest {
 	public void generadorFatiga() {
 		PrintWriter pw;
 		try {
-			pw = new PrintWriter("lote_de_pruebas/Input/casoFatiga.in");
+			pw = new PrintWriter("lote_de_pruebas/Input/casoFatiga9.in");
 			Random r = new Random();
-			pw.println(400000);
-			for(int i=1; i<400000; i++) {
+			pw.println(9000);
+			for(int i=1; i<9000; i++) {
 				pw.print(r.nextInt(100000000)+" ");
 			}
 			pw.close();
