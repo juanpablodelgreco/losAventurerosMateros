@@ -80,17 +80,39 @@ public class MaterosTest {
 		esperado.close();
 		recibido.close();
 	}
+	
 	@Test
-	public void testCasoFatiga() {
-		//generadorFatiga();
+	public void testCasoFatiga() throws FileNotFoundException {
 		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("casoFatiga");
 		pe.eleccion();
+		Scanner esperado = new Scanner(new File("./lote_de_pruebas/Esperado/casoFatiga.out"));
+		String esp = esperado.useDelimiter("\\A").next();
+
+		Scanner recibido = new Scanner(new File("./lote_de_pruebas/Recibido/casoFatiga.out"));
+		String rec = recibido.useDelimiter("\\A").next();
+		Assert.assertEquals(esp, rec);
+		esperado.close();
+		recibido.close();
+	}
+	
+	@Test
+	public void testcebaElPrimero() throws FileNotFoundException {
+		ProcedimientoDeEleccion pe = new ProcedimientoDeEleccion("cebaElPrimero");
+		pe.eleccion();
+		Scanner esperado = new Scanner(new File("./lote_de_pruebas/Esperado/cebaElPrimero.out"));
+		String esp = esperado.useDelimiter("\\A").next();
+
+		Scanner recibido = new Scanner(new File("./lote_de_pruebas/Recibido/cebaElPrimero.out"));
+		String rec = recibido.useDelimiter("\\A").next();
+		Assert.assertEquals(esp, rec);
+		esperado.close();
+		recibido.close();
 	}
 	
 	public void generadorFatiga() {
 		PrintWriter pw;
 		try {
-			pw = new PrintWriter("lote_de_pruebas/Input/casoFatiga9.in");
+			pw = new PrintWriter("lote_de_pruebas/Input/casoFatiga.in");
 			Random r = new Random();
 			pw.println(9000);
 			for(int i=1; i<9000; i++) {

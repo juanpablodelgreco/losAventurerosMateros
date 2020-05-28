@@ -10,9 +10,4 @@ public class Aventurero {
 	public int getNumero() {
 		return numero;
 	}
-
-	@Override
-	public String toString() {
-		return "Aventurero [numero=" + numero + "]";
-	}
 }

@@ -64,12 +64,4 @@ public class ProcedimientoDeEleccion {
 			e.printStackTrace();
 		}
 	}
-	
-	@Override
-	public String toString() {
-		return "ProcedimientoDeEleccion [aventureros=" + aventureros + ", numSalida=" + numSalida + ", cantAventureros="
-				+ cantAventureros + ", path=" + path + "]";
-	}
-	
-	
 }
